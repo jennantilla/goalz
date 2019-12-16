@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Goalz{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Think it. Visualize it. Accomplish it.</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Sign In</h3>
+            <form action="/login" method="POST">
+                <label for="email">Email:</label>
+                    <input type="email" name="email">
+                <label for="password">Password:</label>
+                    <input type="password" name="password">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Sign Up</h3>
+            <form action="/register" method="POST">
+                <label for="name">Name:</label>
+                    <input type="text" name="name">
+                <label for="email">Email:</label>
+                    <input type="email" name="email">
+                <label for="password">Password:</label>
+                    <input type="password" name="password">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

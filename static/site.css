@@ -1,0 +1,11 @@
+.hide {
+   display: none;
+}
+
+.container {
+    padding: 3px;
+}
+
+.card {
+    margin: 3px;
+}
