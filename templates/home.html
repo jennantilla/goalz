@@ -16,26 +16,34 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h3>Sign In</h3>
-            <form action="/login" method="POST">
-                <label for="email">Email:</label>
-                    <input type="email" name="email">
-                <label for="password">Password:</label>
-                    <input type="password" name="password">
+            <h3>Sign Up</h3>
+            <form action="/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
                 <input type="submit">
             </form>
         </div>
-    </div>
-    <div class="row">
         <div class="col">
-            <h3>Sign Up</h3>
-            <form action="/register" method="POST">
-                <label for="name">Name:</label>
-                    <input type="text" name="name">
+            <h3>Sign In</h3>
+            <form action="/login" method="POST">
+                <div class="form-group">
                 <label for="email">Email:</label>
-                    <input type="email" name="email">
-                <label for="password">Password:</label>
-                    <input type="password" name="password">
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
                 <input type="submit">
             </form>
         </div>

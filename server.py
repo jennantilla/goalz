@@ -96,7 +96,7 @@ def edit_goal():
     user_goal = (Goal.query.filter_by(user_id=user_id, 
                                     goal_id=goal_id).first())
 
-    user_goal.entry_dateate = date
+    user_goal.entry_date = date
     user_goal.goal = text 
     db.session.commit()
 

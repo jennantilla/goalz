@@ -15,16 +15,17 @@
 </head>
 <body class="d-flex flex-column">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="/"><img src="https://images.vexels.com/media/users/3/142329/isolated/preview/c1ab96ca6846473d35b94dd9e0ce942c-letterhead-red-neon-font-g-by-vexels.png" style="width:50px">Goalz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          {% if "user_id" in session %}
-          <a id="log-out" class="nav-item nav-link" href="/logout">Log out</a>
-          {% endif %}
+        {% if "user_id" in session %}
+        <a id="log-out" class="nav-item nav-link" href="/logout">Log out</a>
+        {% endif %}
         </div>
-      </div>
+        </div>
     </nav>
 
     {% for flash in get_flashed_messages() %}

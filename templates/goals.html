@@ -12,22 +12,26 @@
     </div>
 </div>
 
-<div class="container">
+<div class="my-3 container">
     <div class="row">
         <div class="col">
             <h2>Add a goal</h2>
             <form action="/add-goal" method="POST" id="add-goal">
                 <input type="text" style="width: 500px" name="goal">
-                <input type="submit">
+                <button type="submit" class="btn-outline-secondary btn-sm">Submit</button>
             </form>
         </div>
     </div>
 </div>
 
+{% if goals|length >= 1 %}
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>Your goals</h2><button display="inline" id="edit-btn">Edit</button>
+    <div class="d-flex flex-row">
+        <div>
+            <h2 id="goal-header">Your goals</h2>
+        </div>
+        <div>
+            <button class="m-2 btn-outline-secondary btn-sm" id="edit-btn">Edit</button>
         </div>
     </div>
 </div>
@@ -36,18 +40,17 @@
     <div class="row">
         {% for goal in goals %}
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 22rem">
                 <div class="card-body">
-                    <h5 class="card-title">{{ goal.entry_date.strftime("%B %d, %Y") }}</h5>
-                    <p class="card-text">{{ goal.goal }}</p>
+                    <h5 class="card-title" style="color:#FF8A9D">{{ goal.entry_date.strftime("%B %d, %Y") }}</h5>
+                    <h5 class="card-text">{{ goal.goal }}</h5>
                     <form class="edit-form hide" action="/edit-goal" method="POST">
-                        <h6>edit fields below:</h6>
                         <input class="hide" name="id" value={{ goal.goal_id }}>
                         <label for="date">Date:</label>
-                            <input style="width:200px" name="date" value={{ goal.entry_date }}>
+                            <input type="date" style="width:260px" name="date" value={{ goal.entry_date }}>
                         <label for="goal">Goal:</label>
-                            <input style="width:200px" name="goal" value="{{ goal.goal }}">
-                        <input type="submit" value="Commit changes">
+                            <input style="width:260px" name="goal" value="{{ goal.goal }}">
+                        <button class="btn-outline-secondary btn-sm" type="submit">Save</button>
                     </form>
                 </div>
             </div>
@@ -55,16 +58,14 @@
         {% endfor %}
     </div>
 </div>
+{% endif %}
 
 <script>
-    let displayForm = () => {
+    $("#edit-btn").on("click", () => {
         $(".edit-form").removeClass("hide");
-    }
+    })
 
-    let buttons = document.querySelectorAll('button');
-        for (let i=0; i<buttons.length; ++i) {
-          buttons[i].addEventListener('click', displayForm);
-        }
+    
 </script>
 
 {% endblock %}
