@@ -9,3 +9,13 @@
 .card {
     margin: 3px;
 }
+
+.btn-primary, .btn-primary:active .btn-primary:disabled, .btn-primary:visited, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:active:focus {
+    background-color: #FF8A9D;
+    border-color: #FF8A9D;;
+}
+
+.btn-primary:hover {
+    background-color: red;
+    border-color: red;
+}
